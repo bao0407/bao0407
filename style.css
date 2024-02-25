@@ -1,0 +1,74 @@
+/* Resetting default margin and padding */
+body, h1, h2, p, ol {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body background with space-themed background image */
+body {
+    background-image: url('background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #FFFFFF; /* white text */
+    font-family: Arial, sans-serif;
+}
+
+/* Header style */
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Banner and navbar style */
+.banner {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+/* Abstract and References section style */
+section {
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #FFFFFF; /* white */
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Links style */
+a {
+    color: #FFFFFF; /* white */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: #CCCCCC; /* light gray */
+    }
