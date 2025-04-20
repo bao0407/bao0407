@@ -1,74 +1,153 @@
-/* Resetting default margin and padding */
-body, h1, h2, p, ol {
-    margin: 0;
-    padding: 0;
-}
-
-/* Body background with space-themed background image */
+<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="UTF-8" / >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" / >
+<title > Happy Birthday My Babi ??</title >
+<style >
 body {
-    background-image: url('background1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #FFFFFF; /* white text */
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffe6f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-/* Header style */
-header {
-    padding: 20px;
+h1 {
+    color: #d63384;
     text-align: center;
 }
 
-/* Banner and navbar style */
-.banner {
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-    padding: 10px;
+.gift-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin-top: 30px;
 }
 
-.navbar {
-    display: flex;
+.gift-box {
+    background-color: #fff;
+    border: 2px solid #d63384;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    transition: transform 0.3s;
+}
+
+    .gift-box:hover {
+        transform: scale(1.05);
+    }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
     justify-content: center;
 }
 
-.logo {
-    width: 200px;
-    height: auto;
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
 }
 
-/* Abstract and References section style */
-section {
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-    padding: 20px;
-    margin-top: 20px;
-}
-
-h2 {
-    color: #FFFFFF; /* white */
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-li {
-    margin-bottom: 10px;
-}
-
-/* Links style */
-a {
-    color: #FFFFFF; /* white */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-    a:hover {
-        color: #CCCCCC; /* light gray */
+    .modal-content img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin-top: 15px;
     }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+</style >
+</head >
+<body >
+<h1 > Happy Birthday My Babi Vy ??</h1 >
+<div class="gift-grid" >
+<div class="gift-box" onclick="openGift(0)" > ?? Mystery box 1</div >
+<div class="gift-box" onclick="openGift(1)" > ?? Mystery box 2</div >
+<div class="gift-box" onclick="openGift(2)" > ?? Mystery box 3</div >
+</div >
+
+<div id="giftModal" class="modal" onclick="closeModal(event)" >
+<div class="modal-content" id="modalContent" >
+<button class="close-btn" onclick="closeModal(event)" > &times;</button >
+<h2 id="wishTitle" > </h2 >
+<p id="wishText" > </p >
+<img id="wishImage" src="" alt="Gift image" / >
+</div >
+</div >
+
+<script >
+const wishes = [ {
+    title: "Mystery box 1 - My Love", text: "Babi, you make my world brighter every single day. I feel so lucky to have you. Happy Birthday!", image: "https://i.imgur.com/CJkxAes.jpg"
+}
+
+,
+{
+    title: "Mystery box 2 - My Baby", text: "Every memory with you is a treasure. Let’s make many more adventures together ??", image: "https://i.imgur.com/MZHM62U.jpg"
+}
+
+,
+{
+    title: "Mystery box 3 - My Everything", text: "Your smile is my favorite view. I’ll do anything to keep you smiling forever ??", image: "https://i.imgur.com/eheLuii.jpg"
+}
+
+];
+
+function openGift(index) {
+    const wish = wishes[index];
+    document .getElementById('wishTitle').innerText = wish.title;
+    document .getElementById('wishText').innerText = wish.text;
+    document .getElementById('wishImage').src = wish.image;
+    document .getElementById('giftModal').style.display = 'flex';
+}
+
+function closeModal(event) {
+    if (event.target.id === 'giftModal' || event.target.className === 'close-btn')
+
+{
+    document .getElementById('giftModal').style.display = 'none';
+}
+
+}
+</script >
+</body >
+</html >
