@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulation of Starlink LEO Satellites with ns-3 and Optional DDoS Vulnerability Assessment</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday My Babi 💖</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="banner">
-        <div class="navbar">
-            <img src="logo2 (1).png" class="logo" />
-        </div>
+  <h1>Happy Birthday My Babi Vy 💕</h1>
+  <div class="gift-grid">
+    <div class="gift-box" onclick="openGift(0)">🎁 Gift 1</div>
+    <div class="gift-box" onclick="openGift(1)">🎁 Gift 2</div>
+    <div class="gift-box" onclick="openGift(2)">🎁 Gift 3</div>
+  </div>
+
+  <div id="giftModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" id="modalContent">
+      <button class="close-btn" onclick="closeModal(event)">&times;</button>
+      <h2 id="wishTitle"></h2>
+      <p id="wishText"></p>
+      <img id="wishImage" src="" alt="Gift image" />
     </div>
+  </div>
 
-    <header>
-        <h1>Simulation of Starlink LEO Satellites with ns-3 and Optional DDoS Vulnerability Assessment</h1>
-    </header>
+  <script>
+    const wishes = [
+      {
+        title: "Gift 1 - My Love for You",
+        text: "Babi, you make my world brighter every single day. I feel so lucky to have you. Happy Birthday!",
+        image: "https://i.imgur.com/CJkxAes.jpg"
+      },
+      {
+        title: "Gift 2 - Our Memories",
+        text: "Every memory with you is a treasure. Let’s make many more adventures together 💖",
+        image: "https://i.imgur.com/MZHM62U.jpg"
+      },
+      {
+        title: "Gift 3 - Your Smile",
+        text: "Your smile is my favorite view. I’ll do anything to keep you smiling forever 🥰",
+        image: "https://i.imgur.com/eheLuii.jpg"
+      }
+    ];
 
-    <section>
-        <h2>Abstract</h2>
-        <p>
-            This project proposal concentrates on simulating Starlink's Geostationary Earth Orbit (GEO) satellite network using the ns-3 network simulator, focusing on evaluating performance across various scenarios. This research tackles significant challenges in optimizing satellite communication networks. Through simulation-based methodologies, the study seeks to offer important insights for improving the reliability and resilience of Starlink's satellite internet constellation before real-world implementation.</p>
-    </section>
+    function openGift(index) {
+      const wish = wishes[index];
+      document.getElementById('wishTitle').innerText = wish.title;
+      document.getElementById('wishText').innerText = wish.text;
+      document.getElementById('wishImage').src = wish.image;
+      document.getElementById('giftModal').style.display = 'flex';
+    }
 
-    <section>
-        <h2>References</h2>
-        <ol>
-            <li>[1] Z. Wang et al., "Design and Implementation of NS3-Based Simulation System of LEO Satellite Constellation for IoTs," 2018. [Accessed: Feb. 8, 2024]            </li>
-            <li>[2] J. Chen et al., "Design and Implementation of Congestion-Control Strategy for LEO Satellite Based on NS3," 2021. [Accessed: Feb. 8, 2024]</li>
-            <li>[3] M. Ettinger, “SNS3/SNS3-satellite: Satellite Module for NS-3 simulator,” GitHub, https://github.com/sns3/sns3-satellite. [Accessed Feb. 25, 2024].</li>
-            <li>[4] W. Jiang et al., "Network Simulators for Satellite-Terrestrial Integrated Networks: A Survey," 2023​​. [Accessed: Feb. 8, 2024]</li>
-            <li>[5] N. Cheng, W. Quan, W. Shi, H. Wu, Q. Ye, H. Zhou, W. Zhuang, X. (Sherman) Shen, and B. Bai, "A Comprehensive Simulation Platform for Space-Air-Ground Integrated Network," IEEE Wireless Communications, 2020​​.</li>
-        </ol>
-    </section>
+    function closeModal(event) {
+      if (event.target.id === 'giftModal' || event.target.className === 'close-btn') {
+        document.getElementById('giftModal').style.display = 'none';
+      }
+    }
+  </script>
 </body>
 </html>
